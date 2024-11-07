@@ -1,4 +1,4 @@
-name: Trigger Release
+name: Release
 
 on:
   push:
@@ -8,10 +8,15 @@ on:
 jobs:
   trigger-release:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Run Semantic Release from External Repo
-        uses: titan85/semanticPlugin@main
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
+          node-version: '16'
+      - name: Run Semantic Release
+        uses: titan85/semanticPlugin@main  # Usa tu repositorio de Action
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY_URL: ${{ github.repository }}
