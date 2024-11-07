@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: Run Semantic Release from External Repo
         uses: titan85/semanticPlugin@main
-        env:
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY_URL: ${{ github.repository }}
