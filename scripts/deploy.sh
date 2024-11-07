@@ -1,3 +1,6 @@
 #!/bin/bash
-echo "Deploying version $1"
-exit 1
+set -e
+
+version=$1
+
+echo "Iniciando despliegue para la versión $version"
