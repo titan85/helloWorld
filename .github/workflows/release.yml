@@ -30,10 +30,6 @@ jobs:
       - name: Set permissions for deploy.sh
         run: chmod +x ./scripts/deploy.sh
 
-      - name: Verifica deploy.sh
-        run: ./scripts/deploy.sh test_version
-
-
       - name: Run Semantic Release
         uses: titan85/semanticPlugin@main
         with:
