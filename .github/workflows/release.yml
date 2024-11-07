@@ -27,6 +27,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Set permissions for deploy.sh
+        run: chmod +x ./scripts/deploy.sh
+
       - name: Run Semantic Release
         uses: titan85/semanticPlugin@main
         with:
