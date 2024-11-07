@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/titan85/helloWorld/compare/v1.0.0...v1.0.1) (2024-11-07)
+
+
+### Bug Fixes
+
+* Correciones repo ([e5c7ecf](https://github.com/titan85/helloWorld/commit/e5c7ecfb98ed5795e79760768cb68d05364bc5cb))
+
 # 1.0.0 (2024-11-07)
 
 
