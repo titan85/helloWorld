@@ -4,8 +4,31 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
-      "@semantic-release/github",
-      "@semantic-release/git"
+      [
+        "@semantic-release/exec",
+        {
+          "verifyReleaseCmd": "./scripts/deploy.sh ${nextRelease.version}",
+          "prepareCmd": "mvn versions:set -DnewVersion=${nextRelease.version} && mvn versions:commit"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": ["pom.xml", "CHANGELOG.md"],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {"path": "dist/*.zip", "label": "Distribution Files"},
+            {"path": "docs/*.pdf", "label": "Documentation"}
+          ],
+          "failComment": false,
+          "failTitle": false
+        }
+      ]
     ]
   }
   
