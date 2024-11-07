@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>hello-world</artifactId>
-    <version>1.0.1</version> <!-- Semantic Release actualizará esta versión. -->
+    <version>1.0.1</version> <!-- Semantic Release actualizará esta versión -->
 
     <build>
         <plugins>
