@@ -1,0 +1,17 @@
+name: Trigger Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Semantic Release from External Repo
+        uses: titan85/semanticPlugin@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY_URL: ${{ github.repository }}
