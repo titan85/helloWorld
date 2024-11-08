@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/titan85/helloWorld/compare/v1.2.0...v1.3.0) (2024-11-08)
+
+
+### Features
+
+* nueva funcionalidad para actualizar README.md ([5be12d1](https://github.com/titan85/helloWorld/commit/5be12d1915493e2fdd8c8b98d12e169797df1018))
+
 # [1.2.0](https://github.com/titan85/helloWorld/compare/v1.1.1...v1.2.0) (2024-11-08)
 
 
