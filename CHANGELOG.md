@@ -1,3 +1,22 @@
+## [1.0.2](https://github.com/titan85/helloWorld/compare/v1.0.1...v1.0.2) (2024-11-08)
+
+
+### Bug Fixes
+
+* provoco error en deploy.sh ([31f6f8e](https://github.com/titan85/helloWorld/commit/31f6f8e5eb2f7ad2b47fe28eabb211dde56b1590))
+* provoco error en deploy.sh ([5cf629f](https://github.com/titan85/helloWorld/commit/5cf629f9e1c1d634d2c2005cbe07f82db6323310))
+* provoco error en deploy.sh ([3c22e77](https://github.com/titan85/helloWorld/commit/3c22e773a18016c2026fc6fbfc8020624bd4ed5c))
+* provoco error en deploy.sh ([c05d85b](https://github.com/titan85/helloWorld/commit/c05d85b7e39affac2ffbd468f9031d39e623c4f2))
+* provoco error en deploy.sh ([3524659](https://github.com/titan85/helloWorld/commit/35246598edf1ec4e38d7d072ee484e87a41d66af))
+* provoco error en deploy.sh ([6c661d8](https://github.com/titan85/helloWorld/commit/6c661d878ee8ce65b634c446a5db34695f654a40))
+* provoco error en deploy.sh ([84761ab](https://github.com/titan85/helloWorld/commit/84761ab8672fe83d888d387ea1d62da60a99dbd9))
+* provoco error en deploy.sh ([26ada73](https://github.com/titan85/helloWorld/commit/26ada73af24e75a81b5c48d3fad140370a0068ff))
+* provoco error en deploy.sh ([76f0a09](https://github.com/titan85/helloWorld/commit/76f0a0909c285cec8d73590955687ed619bf9cb8))
+* provoco error en deploy.sh ([c2982fe](https://github.com/titan85/helloWorld/commit/c2982fede9803b96837b0473ed22b2db2c2f1ea4))
+* provoco error en deploy.sh ([d60b64b](https://github.com/titan85/helloWorld/commit/d60b64be6b84d52dc29648393f835167b7b0cd0e))
+* provoco error en deploy.sh ([7ac43b0](https://github.com/titan85/helloWorld/commit/7ac43b0fc637fc3703fdf551dde8c1d23a9cc48c))
+* solucion al error en deploy.sh ([6fb687e](https://github.com/titan85/helloWorld/commit/6fb687e7dd71f7146c1da7ebc49e3ce0538dc1d3))
+
 ## [1.0.1](https://github.com/titan85/helloWorld/compare/v1.0.0...v1.0.1) (2024-11-07)
 
 
