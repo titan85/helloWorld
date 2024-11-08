@@ -62,27 +62,30 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract latest changelog version
+      - name: Extract latest version and main commit from CHANGELOG
         id: changelog
         run: |
-          # Obtener la última versión del changelog
+          # Obtener la línea de la última versión
           latest_version=$(grep -m 1 -E "^## \[\d+\.\d+\.\d+\]" CHANGELOG.md)
           
-          # Extraer la fecha y el número de versión
+          # Extraer el número de versión y la fecha
           version_tag=$(echo "$latest_version" | grep -oP "\d+\.\d+\.\d+")
           version_date=$(echo "$latest_version" | grep -oP "\(\d{4}-\d{2}-\d{2}\)")
           
+          # Obtener el primer commit de la última versión
+          main_commit=$(awk '/^## \['"$version_tag"'\]/, /^## /' CHANGELOG.md | grep -m 1 "\* " | sed 's/^\* //')
+
           # Construir la entrada de la última versión
           repo_url="https://github.com/${GITHUB_REPOSITORY}"
           tag_url="$repo_url/tree/v$version_tag"
           
           # Crear la sección de Current Version en una variable temporal
-          current_version_section="# Current version\n## [$version_tag]($tag_url) $version_date\n"
+          current_version_section="# Current version\n## [$version_tag]($tag_url) $version_date\n\n$main_commit\n"
 
           # Agregar la variable a $GITHUB_ENV
           echo "CURRENT_VERSION_SECTION<<EOF" >> $GITHUB_ENV
           echo -e "$current_version_section" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV 
 
 
       - name: Update README.md with latest version
