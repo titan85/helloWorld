@@ -62,43 +62,26 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract latest version and main commit from CHANGELOG
-        id: changelog
+      - name: Obtener la última versión del changelog
+        id: obtener_ultima_version
         run: |
-          # Obtener la línea de la última versión
-          latest_version=$(grep -m 1 -E "^## \[\d+\.\d+\.\d+\]" CHANGELOG.md)
-          
-          # Extraer el número de versión y la fecha
+          latest_version=$(grep -m 1 -P "^\s*#\s*\[\d+\.\d+\.\d+\]" CHANGELOG.md)
           version_tag=$(echo "$latest_version" | grep -oP "\d+\.\d+\.\d+")
           version_date=$(echo "$latest_version" | grep -oP "\(\d{4}-\d{2}-\d{2}\)")
-          
-          # Obtener el primer commit de la última versión
-          main_commit=$(awk '/^## \['"$version_tag"'\]/, /^## /' CHANGELOG.md | grep -m 1 "\* " | sed 's/^\* //')
-
-          # Construir la entrada de la última versión
           repo_url="https://github.com/${GITHUB_REPOSITORY}"
           tag_url="$repo_url/tree/v$version_tag"
+          echo "CURRENT_VERSION_SECTION=# Current version\n## [$version_tag]($tag_url) $version_date\n" >> $GITHUB_ENV
+      
+      - name: Actualizar README.md con la última versión
+        run: |
+          # Almacenar el contenido del README actual
+          current_readme=$(cat README.md)
           
-          # Crear la sección de Current Version en una variable temporal
-          current_version_section="# Current version\n## [$version_tag]($tag_url) $version_date\n\n$main_commit\n"
-
-          # Agregar la variable a $GITHUB_ENV
-          echo "CURRENT_VERSION_SECTION<<EOF" >> $GITHUB_ENV
-          echo -e "$current_version_section" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV 
-
-
-      - name: Update README.md with latest version
-        run: |
-          # Colocar la nueva sección al inicio del README.md
-          { echo "${{ env.CURRENT_VERSION_SECTION }}"; cat README.md; } > README.tmp && mv README.tmp README.md
-
-      - name: Commit README.md Update
-        run: |
-          git config --local user.name "GitHub Actions"
-          git config --local user.email "actions@github.com"
-          git add README.md
-          git commit -m "docs: update README with latest version"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Crear la sección de Current Version en la parte superior
+          new_content=$(echo -e "$CURRENT_VERSION_SECTION\n\n$current_readme")
+          
+          # Sobrescribir el README.md con el nuevo contenido
+          echo "$new_content" > README.md
+      
+        shell: bash
+        
