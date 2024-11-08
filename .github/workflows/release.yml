@@ -61,3 +61,36 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          - name: Extract latest changelog entry
+          id: changelog
+          run: |
+            # Obtener la última versión con sus commits
+            latest_version=$(grep -m 1 -E "^## " CHANGELOG.md)
+            latest_entry=$(awk '/^## /{if(N)exit;N++}1' CHANGELOG.md)
+            
+            # Generar un enlace al tag de GitHub
+            version_tag=$(echo "$latest_version" | grep -oP "\d+\.\d+\.\d+")
+            repo_url="https://github.com/${GITHUB_REPOSITORY}"
+            tag_url="$repo_url/releases/tag/v$version_tag"
+            
+            # Crear la nueva sección con la última versión
+            echo "LATEST_CHANGELOG_SECTION<<EOF" >> $GITHUB_ENV
+            echo "## Current Version: [$version_tag]($tag_url)" >> $GITHUB_ENV
+            echo "$latest_entry" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+  
+      - name: Update README.md
+        run: |
+          # Colocar la nueva sección al principio del README.md
+          { echo "${{ env.LATEST_CHANGELOG_SECTION }}"; tail -n +2 README.md; } > README.tmp && mv README.tmp README.md
+
+      - name: Commit README.md Update
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add README.md
+          git commit -m "docs: update README with latest version"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
