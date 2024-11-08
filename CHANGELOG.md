@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/titan85/helloWorld/compare/v1.0.2...v1.1.0) (2024-11-08)
+
+
+### Features
+
+* script nuevo para ordenar changelog por orden de commit ([7eb67d1](https://github.com/titan85/helloWorld/commit/7eb67d15993c674b1a83765e79b47e9cea327a95))
+* script nuevo para ordenar changelog por orden de commit ([ca2a864](https://github.com/titan85/helloWorld/commit/ca2a86450ce54c6e2f464d8cff581401a42d57e0))
+
 ## [1.0.2](https://github.com/titan85/helloWorld/compare/v1.0.1...v1.0.2) (2024-11-08)
 
 
