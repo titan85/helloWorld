@@ -62,26 +62,48 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Obtener la última versión del changelog
-        id: obtener_ultima_version
+      - name: Obtener la última versión con BREAKING CHANGES
         run: |
-          latest_version=$(grep -m 1 -P "^\s*#\s*\[\d+\.\d+\.\d+\]" CHANGELOG.md)
-          version_tag=$(echo "$latest_version" | grep -oP "\d+\.\d+\.\d+")
-          version_date=$(echo "$latest_version" | grep -oP "\(\d{4}-\d{2}-\d{2}\)")
-          repo_url="https://github.com/${GITHUB_REPOSITORY}"
-          tag_url="$repo_url/tree/v$version_tag"
-          echo "CURRENT_VERSION_SECTION=# Current version\n## [$version_tag]($tag_url) $version_date\n" >> $GITHUB_ENV
-      
-      - name: Actualizar README.md con la última versión
+          version_found=""
+          breaking_found=false
+          
+          while IFS= read -r line; do
+              if [[ $line =~ ^#\ \[([0-9]+\.[0-9]+\.[0-9]+)\] ]]; then
+                  if $breaking_found; then
+                      break
+                  fi
+                  version_found="$line"
+              fi
+              
+              if [[ $line =~ ^###\ BREAKING\ CHANGES ]]; then
+                  breaking_found=true
+              fi
+          done < CHANGELOG.md
+          
+          if [[ -n "$version_found" ]]; then
+              version_tag=$(echo "$version_found" | grep -oP "\d+\.\d+\.\d+")
+              version_date=$(echo "$version_found" | grep -oP "\(\d{4}-\d{2}-\d{2}\)")
+              repo_url="https://github.com/${GITHUB_REPOSITORY}"
+              tag_url="$repo_url/tree/v$version_tag"
+              echo -e "CURRENT_VERSION_SECTION=\"# Current version\n## [$version_tag]($tag_url) $version_date\n\"" >> $GITHUB_ENV
+          else
+              echo "No se encontró una versión con 'BREAKING CHANGES' o versión válida en el changelog."
+          fi
+
+      # Paso para actualizar el README.md con la sección actualizada de Current Version
+      - name: Update README with Current Version
         run: |
-          # Almacenar el contenido del README actual
-          current_readme=$(cat README.md)
-          
-          # Crear la sección de Current Version en la parte superior
-          new_content=$(echo -e "$CURRENT_VERSION_SECTION\n\n$current_readme")
-          
-          # Sobrescribir el README.md con el nuevo contenido
-          echo "$new_content" > README.md
+          current_version_section="${CURRENT_VERSION_SECTION}"
+          readme_content=$(cat README.md)
+          echo -e "$current_version_section\n\n$readme_content" > README.md
+        env:
+          CURRENT_VERSION_SECTION: ${{ env.CURRENT_VERSION_SECTION }}
+
+      - name: Commit README update
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "docs: update README with current version"
+          git push
       
-        shell: bash
-        
