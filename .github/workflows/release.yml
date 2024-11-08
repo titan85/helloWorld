@@ -30,6 +30,13 @@ jobs:
       - name: Set permissions for deploy.sh
         run: chmod +x ./scripts/deploy.sh
 
+      - name: Mostrar contexto completo
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log(JSON.stringify(context, null, 2));
+
       - name: Run Semantic Release
         uses: titan85/semanticPlugin@main
         with:
