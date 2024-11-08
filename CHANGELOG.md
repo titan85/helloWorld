@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/titan85/helloWorld/compare/v1.1.0...v1.1.1) (2024-11-08)
+
+
+### Bug Fixes
+
+* pequño cambio en pom.xml ([ea22fe1](https://github.com/titan85/helloWorld/commit/ea22fe1d23792d7313c631d04c0719216db1ce5d))
+
 # [1.1.0](https://github.com/titan85/helloWorld/compare/v1.0.0...v1.1.0) (2024-11-08)
 
 
@@ -44,4 +51,3 @@
 * Correciones repo ([cd2af95](https://github.com/titan85/helloWorld/commit/cd2af95c7ab983fa6306ea234ad2b8bf24d57146))
 * Correciones repo ([3e49edf](https://github.com/titan85/helloWorld/commit/3e49edf81e6dd1cda2cca96852e60f9f3b68f575))
 * Correciones repo ([45af751](https://github.com/titan85/helloWorld/commit/45af7511d753a10506fb1737d52ce5b472417cd9))
-
