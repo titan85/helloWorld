@@ -62,28 +62,31 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract latest changelog entry
+      - name: Extract latest changelog version
         id: changelog
         run: |
-          # Obtener la última versión con sus commits
-          latest_version=$(grep -m 1 -E "^## " CHANGELOG.md)
-          latest_entry=$(awk '/^## /{if(N)exit;N++}1' CHANGELOG.md)
+          # Obtener la última versión del changelog
+          latest_version=$(grep -m 1 -E "^## \[\d+\.\d+\.\d+\]" CHANGELOG.md)
           
-          # Generar un enlace al tag de GitHub
+          # Extraer la fecha y el número de versión
           version_tag=$(echo "$latest_version" | grep -oP "\d+\.\d+\.\d+")
-          repo_url="https://github.com/${GITHUB_REPOSITORY}"
-          tag_url="$repo_url/releases/tag/v$version_tag"
+          version_date=$(echo "$latest_version" | grep -oP "\(\d{4}-\d{2}-\d{2}\)")
           
-          # Crear la nueva sección con la última versión
-          echo "LATEST_CHANGELOG_SECTION<<EOF" >> $GITHUB_ENV
-          echo "## Current Version: [$version_tag]($tag_url)" >> $GITHUB_ENV
-          echo "$latest_entry" >> $GITHUB_ENV
+          # Construir la entrada de la última versión
+          repo_url="https://github.com/${GITHUB_REPOSITORY}"
+          tag_url="$repo_url/tree/v$version_tag"
+          
+          # Crear la sección de Current Version
+          echo "CURRENT_VERSION_SECTION<<EOF" >> $GITHUB_ENV
+          echo "# Current version" >> $GITHUB_ENV
+          echo "## [$version_tag]($tag_url) $version_date" >> $GITHUB_ENV
+          echo "" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-  
-      - name: Update README.md
+
+      - name: Update README.md with latest version
         run: |
-          # Colocar la nueva sección al principio del README.md
-          { echo "${{ env.LATEST_CHANGELOG_SECTION }}"; tail -n +2 README.md; } > README.tmp && mv README.tmp README.md
+          # Colocar la nueva sección al inicio del README.md
+          { echo "${{ env.CURRENT_VERSION_SECTION }}"; cat README.md; } > README.tmp && mv README.tmp README.md
 
       - name: Commit README.md Update
         run: |
