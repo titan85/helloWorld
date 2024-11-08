@@ -8,8 +8,29 @@
 # 1.0.0 (2024-11-08)
 
 
+### Features
+
+* script nuevo para ordenar changelog por orden de commit ([f9aa49c](https://github.com/titan85/helloWorld/commit/f9aa49cdf6a820a396a8b8a53d86edd48751e1b4))
+* script nuevo para ordenar changelog por orden de commit ([69897ce](https://github.com/titan85/helloWorld/commit/69897ce138f004a21be301c8d82de97ab0a8ed73))
+* script nuevo para ordenar changelog por orden de commit ([7eb67d1](https://github.com/titan85/helloWorld/commit/7eb67d15993c674b1a83765e79b47e9cea327a95))
+* script nuevo para ordenar changelog por orden de commit ([ca2a864](https://github.com/titan85/helloWorld/commit/ca2a86450ce54c6e2f464d8cff581401a42d57e0))
+
+
 ### Bug Fixes
 
+* solucion al error en deploy.sh ([6fb687e](https://github.com/titan85/helloWorld/commit/6fb687e7dd71f7146c1da7ebc49e3ce0538dc1d3))
+* provoco error en deploy.sh ([31f6f8e](https://github.com/titan85/helloWorld/commit/31f6f8e5eb2f7ad2b47fe28eabb211dde56b1590))
+* provoco error en deploy.sh ([5cf629f](https://github.com/titan85/helloWorld/commit/5cf629f9e1c1d634d2c2005cbe07f82db6323310))
+* provoco error en deploy.sh ([3c22e77](https://github.com/titan85/helloWorld/commit/3c22e773a18016c2026fc6fbfc8020624bd4ed5c))
+* provoco error en deploy.sh ([c05d85b](https://github.com/titan85/helloWorld/commit/c05d85b7e39affac2ffbd468f9031d39e623c4f2))
+* provoco error en deploy.sh ([3524659](https://github.com/titan85/helloWorld/commit/35246598edf1ec4e38d7d072ee484e87a41d66af))
+* provoco error en deploy.sh ([6c661d8](https://github.com/titan85/helloWorld/commit/6c661d878ee8ce65b634c446a5db34695f654a40))
+* provoco error en deploy.sh ([84761ab](https://github.com/titan85/helloWorld/commit/84761ab8672fe83d888d387ea1d62da60a99dbd9))
+* provoco error en deploy.sh ([26ada73](https://github.com/titan85/helloWorld/commit/26ada73af24e75a81b5c48d3fad140370a0068ff))
+* provoco error en deploy.sh ([76f0a09](https://github.com/titan85/helloWorld/commit/76f0a0909c285cec8d73590955687ed619bf9cb8))
+* provoco error en deploy.sh ([c2982fe](https://github.com/titan85/helloWorld/commit/c2982fede9803b96837b0473ed22b2db2c2f1ea4))
+* provoco error en deploy.sh ([d60b64b](https://github.com/titan85/helloWorld/commit/d60b64be6b84d52dc29648393f835167b7b0cd0e))
+* provoco error en deploy.sh ([7ac43b0](https://github.com/titan85/helloWorld/commit/7ac43b0fc637fc3703fdf551dde8c1d23a9cc48c))
 * Correciones repo ([e5c7ecf](https://github.com/titan85/helloWorld/commit/e5c7ecfb98ed5795e79760768cb68d05364bc5cb))
 * Correciones repo ([bd49379](https://github.com/titan85/helloWorld/commit/bd49379a571ae355307d7d2a131943355323b5b2))
 * Correciones repo ([17e3285](https://github.com/titan85/helloWorld/commit/17e3285769665223b61fad6bbeed686bd944ccb6))
@@ -23,24 +44,4 @@
 * Correciones repo ([cd2af95](https://github.com/titan85/helloWorld/commit/cd2af95c7ab983fa6306ea234ad2b8bf24d57146))
 * Correciones repo ([3e49edf](https://github.com/titan85/helloWorld/commit/3e49edf81e6dd1cda2cca96852e60f9f3b68f575))
 * Correciones repo ([45af751](https://github.com/titan85/helloWorld/commit/45af7511d753a10506fb1737d52ce5b472417cd9))
-* provoco error en deploy.sh ([31f6f8e](https://github.com/titan85/helloWorld/commit/31f6f8e5eb2f7ad2b47fe28eabb211dde56b1590))
-* provoco error en deploy.sh ([5cf629f](https://github.com/titan85/helloWorld/commit/5cf629f9e1c1d634d2c2005cbe07f82db6323310))
-* provoco error en deploy.sh ([3c22e77](https://github.com/titan85/helloWorld/commit/3c22e773a18016c2026fc6fbfc8020624bd4ed5c))
-* provoco error en deploy.sh ([c05d85b](https://github.com/titan85/helloWorld/commit/c05d85b7e39affac2ffbd468f9031d39e623c4f2))
-* provoco error en deploy.sh ([3524659](https://github.com/titan85/helloWorld/commit/35246598edf1ec4e38d7d072ee484e87a41d66af))
-* provoco error en deploy.sh ([6c661d8](https://github.com/titan85/helloWorld/commit/6c661d878ee8ce65b634c446a5db34695f654a40))
-* provoco error en deploy.sh ([84761ab](https://github.com/titan85/helloWorld/commit/84761ab8672fe83d888d387ea1d62da60a99dbd9))
-* provoco error en deploy.sh ([26ada73](https://github.com/titan85/helloWorld/commit/26ada73af24e75a81b5c48d3fad140370a0068ff))
-* provoco error en deploy.sh ([76f0a09](https://github.com/titan85/helloWorld/commit/76f0a0909c285cec8d73590955687ed619bf9cb8))
-* provoco error en deploy.sh ([c2982fe](https://github.com/titan85/helloWorld/commit/c2982fede9803b96837b0473ed22b2db2c2f1ea4))
-* provoco error en deploy.sh ([d60b64b](https://github.com/titan85/helloWorld/commit/d60b64be6b84d52dc29648393f835167b7b0cd0e))
-* provoco error en deploy.sh ([7ac43b0](https://github.com/titan85/helloWorld/commit/7ac43b0fc637fc3703fdf551dde8c1d23a9cc48c))
-* solucion al error en deploy.sh ([6fb687e](https://github.com/titan85/helloWorld/commit/6fb687e7dd71f7146c1da7ebc49e3ce0538dc1d3))
 
-
-### Features
-
-* script nuevo para ordenar changelog por orden de commit ([f9aa49c](https://github.com/titan85/helloWorld/commit/f9aa49cdf6a820a396a8b8a53d86edd48751e1b4))
-* script nuevo para ordenar changelog por orden de commit ([69897ce](https://github.com/titan85/helloWorld/commit/69897ce138f004a21be301c8d82de97ab0a8ed73))
-* script nuevo para ordenar changelog por orden de commit ([7eb67d1](https://github.com/titan85/helloWorld/commit/7eb67d15993c674b1a83765e79b47e9cea327a95))
-* script nuevo para ordenar changelog por orden de commit ([ca2a864](https://github.com/titan85/helloWorld/commit/ca2a86450ce54c6e2f464d8cff581401a42d57e0))

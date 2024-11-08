@@ -13,6 +13,7 @@ jobs:
       - name: Clear Git cache
         run: |
           rm -rf ${{ github.workspace }}/.git
+          
       - name: Check out the repository
         uses: actions/checkout@v3
         with:
@@ -42,3 +43,25 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repository_url: ${{ github.repository }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.x'
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+
+      - name: Reorder changelog
+        run: python3 scripts/reorder-changelog.py
+
+      - name: Commit and push reordered changelog
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add CHANGELOG.md
+          git commit -m "chore: reorder CHANGELOG.md"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
