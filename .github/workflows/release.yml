@@ -76,12 +76,9 @@ jobs:
           repo_url="https://github.com/${GITHUB_REPOSITORY}"
           tag_url="$repo_url/tree/v$version_tag"
           
-          # Crear la sección de Current Version
-          echo "CURRENT_VERSION_SECTION<<EOF" >> $GITHUB_ENV
-          echo "# Current version" >> $GITHUB_ENV
-          echo "## [$version_tag]($tag_url) $version_date" >> $GITHUB_ENV
-          echo "" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          # Crear la sección de Current Version y almacenarla en CURRENT_VERSION_SECTION
+          echo -e "CURRENT_VERSION_SECTION=\"# Current version\n## [$version_tag]($tag_url) $version_date\n\"" >> $GITHUB_ENV
+  
 
       - name: Update README.md with latest version
         run: |
