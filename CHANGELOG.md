@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/titan85/helloWorld/compare/v1.0.0...v1.1.0) (2024-11-08)
+
+
+### Features
+
+* cambio de ordenacion de commits en chagelog ([75b303b](https://github.com/titan85/helloWorld/commit/75b303b25cb1fc43fb3bdf28a9189758b1ab1fa2))
+
 # 1.0.0 (2024-11-08)
 
 
