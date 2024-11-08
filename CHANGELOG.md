@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/titan85/helloWorld/compare/v1.5.0...v1.6.0) (2024-11-08)
+
+
+### Features
+
+* nueva funcionalidad para actualizar README.md ([c78a2b6](https://github.com/titan85/helloWorld/commit/c78a2b61217813819174cf960344e5d92e5a8aac))
+
 # [1.5.0](https://github.com/titan85/helloWorld/compare/v1.4.0...v1.5.0) (2024-11-08)
 
 
@@ -80,4 +87,3 @@
 * Correciones repo ([cd2af95](https://github.com/titan85/helloWorld/commit/cd2af95c7ab983fa6306ea234ad2b8bf24d57146))
 * Correciones repo ([3e49edf](https://github.com/titan85/helloWorld/commit/3e49edf81e6dd1cda2cca96852e60f9f3b68f575))
 * Correciones repo ([45af751](https://github.com/titan85/helloWorld/commit/45af7511d753a10506fb1737d52ce5b472417cd9))
-
