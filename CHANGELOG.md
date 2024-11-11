@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.9.1) (2024-11-11)
+
+
+### Bug Fixes
+
+* update readme ([b74d7ba](https://github.com/titan85/helloWorld/commit/b74d7baef8c94eb91e9438f075e9d787871ae02c))
+
 # [1.9.0](https://github.com/titan85/helloWorld/compare/v1.8.0...v1.9.0) (2024-11-11)
 
 
