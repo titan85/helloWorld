@@ -4,7 +4,6 @@
     <groupId>com.example</groupId>
     <artifactId>hello-world</artifactId>
     <version>1.9.1</version> <!-- Semantic Release actualizará esta versión. -->
-
     <build>
         <plugins>
             <plugin>
