@@ -3,6 +3,22 @@
 
 ### Bug Fixes
 
+* ajuste de tags ([13ff351](https://github.com/titan85/helloWorld/commit/13ff35163e3538f38e9a8d92233d7a910a8c6034))
+* cambio minimo en un punto ([ed73345](https://github.com/titan85/helloWorld/commit/ed73345b957c989bf926be6cee8164a8c4bcc118))
+* fixing punto ([ddd613f](https://github.com/titan85/helloWorld/commit/ddd613fb036435f02ad5d45760c2f1a50254a8c1))
+* permisos script actualizacion de readme ([338b461](https://github.com/titan85/helloWorld/commit/338b461ca3829b86b7e77d253d90325f831954bc))
+
+
+### Features
+
+* cambios importantes ([571194a](https://github.com/titan85/helloWorld/commit/571194a70485d55b6a7f09ac1d5179648667d584))
+* unificar commit con el original ([cb8d7eb](https://github.com/titan85/helloWorld/commit/cb8d7ebe4e76f2094da581090dc597d3402f3b84))
+
+# [1.10.0](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.10.0) (2024-11-11)
+
+
+### Bug Fixes
+
 * cambio minimo en un punto ([ed73345](https://github.com/titan85/helloWorld/commit/ed73345b957c989bf926be6cee8164a8c4bcc118))
 * fixing punto ([ddd613f](https://github.com/titan85/helloWorld/commit/ddd613fb036435f02ad5d45760c2f1a50254a8c1))
 * permisos script actualizacion de readme ([338b461](https://github.com/titan85/helloWorld/commit/338b461ca3829b86b7e77d253d90325f831954bc))
