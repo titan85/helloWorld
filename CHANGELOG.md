@@ -1,3 +1,15 @@
+# [1.10.0](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.10.0) (2024-11-11)
+
+
+### Bug Fixes
+
+* permisos script actualizacion de readme ([338b461](https://github.com/titan85/helloWorld/commit/338b461ca3829b86b7e77d253d90325f831954bc))
+
+
+### Features
+
+* cambios importantes ([571194a](https://github.com/titan85/helloWorld/commit/571194a70485d55b6a7f09ac1d5179648667d584))
+
 ## [1.9.1](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.9.1) (2024-11-11)
 
 
@@ -115,3 +127,4 @@
 * Correciones repo ([cd2af95](https://github.com/titan85/helloWorld/commit/cd2af95c7ab983fa6306ea234ad2b8bf24d57146))
 * Correciones repo ([3e49edf](https://github.com/titan85/helloWorld/commit/3e49edf81e6dd1cda2cca96852e60f9f3b68f575))
 * Correciones repo ([45af751](https://github.com/titan85/helloWorld/commit/45af7511d753a10506fb1737d52ce5b472417cd9))
+
