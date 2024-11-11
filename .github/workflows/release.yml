@@ -96,8 +96,6 @@ jobs:
           fi
         shell: bash
   
-
-      # Paso para actualizar el README.md con la sección actualizada de Current Version
       - name: Update README with Current Version
         run: |
           current_version_section="${CURRENT_VERSION_SECTION}"
@@ -114,4 +112,5 @@ jobs:
           latest_message=$(git log -1 --pretty=%B)
           git commit -m "$latest_message" --amend --no-edit
           git push --force
+
       
