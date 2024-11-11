@@ -52,22 +52,6 @@ jobs:
       - name: Reorder changelog
         run: python3 scripts/reorder-changelog.py
 
-      - name: Commit and push reordered changelog
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add CHANGELOG.md
-          
-          # Solo hacer commit si hay cambios en CHANGELOG.md
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: reorder CHANGELOG.md"
-            git push
-          fi
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Obtener la última versión con BREAKING CHANGES
         id: obtener_version_breaking_changes
         run: |
@@ -97,12 +81,8 @@ jobs:
         shell: bash
   
       - name: Update README with Current Version
-        run: |
-          current_version_section="${CURRENT_VERSION_SECTION}"
-          readme_content=$(cat README.md)
-          echo -e "$current_version_section\n\n$readme_content" > README.md
-        env:
-          CURRENT_VERSION_SECTION: ${{ env.CURRENT_VERSION_SECTION }}
+        run: ./scripts/update-readme.sh
+        shell: bash
 
       - name: Unificar commits
         run: |
