@@ -97,12 +97,8 @@ jobs:
         shell: bash
   
       - name: Update README with Current Version
-        run: |
-          current_version_section="${CURRENT_VERSION_SECTION}"
-          readme_content=$(cat README.md)
-          echo -e "$current_version_section\n\n$readme_content" > README.md
-        env:
-          CURRENT_VERSION_SECTION: ${{ env.CURRENT_VERSION_SECTION }}
+        run: ./scripts/update-readme.sh
+        shell: bash
 
       - name: Unificar commits
         run: |
