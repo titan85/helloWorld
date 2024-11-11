@@ -1,3 +1,10 @@
+## [1.9.2](https://github.com/titan85/helloWorld/compare/v1.9.1...v1.9.2) (2024-11-11)
+
+
+### Bug Fixes
+
+* unificar commits ([5fe987e](https://github.com/titan85/helloWorld/commit/5fe987ec99fd02ca63e069032852dfdd6a6eb6c4))
+
 ## [1.9.1](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.9.1) (2024-11-11)
 
 
@@ -115,4 +122,3 @@
 * Correciones repo ([cd2af95](https://github.com/titan85/helloWorld/commit/cd2af95c7ab983fa6306ea234ad2b8bf24d57146))
 * Correciones repo ([3e49edf](https://github.com/titan85/helloWorld/commit/3e49edf81e6dd1cda2cca96852e60f9f3b68f575))
 * Correciones repo ([45af751](https://github.com/titan85/helloWorld/commit/45af7511d753a10506fb1737d52ce5b472417cd9))
-
