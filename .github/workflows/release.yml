@@ -31,6 +31,12 @@ jobs:
       - name: Set permissions for deploy.sh
         run: chmod +x ./scripts/deploy.sh
 
+      - name: Guardar mensaje de commit para su uso al final y mantener historico
+        id: capture_message
+        run: |
+          message=$(git log -1 --pretty=%B)
+          echo "COMMIT_MESSAGE=$message" >> $GITHUB_ENV
+
       - name: Mostrar contexto completo
         uses: actions/github-script@v6
         with:
@@ -88,9 +94,10 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add README.md CHANGELOG.md
-          latest_message=$(git log -1 --pretty=%B)
-          git commit -m "$latest_message" --amend --no-edit
+          git add README.md CHANGELOG.md pom.xml
+          git commit --amend --no-edit
           git push --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       
