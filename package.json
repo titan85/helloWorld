@@ -1,6 +1,6 @@
 {
-    "name": "hello-world",
-    "version": "1.0.0",
+    "name": "semantic-release-config-file",
+    "private": true,
     "scripts": {
         "semantic-release": "semantic-release"
     },
