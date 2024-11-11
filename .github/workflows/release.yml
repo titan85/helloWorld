@@ -106,11 +106,12 @@ jobs:
         env:
           CURRENT_VERSION_SECTION: ${{ env.CURRENT_VERSION_SECTION }}
 
-      - name: Commit README update
+      - name: Unificar commits
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git add README.md
-          git commit -m "docs: update README with current version"
-          git push
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md CHANGELOG.md
+          latest_message=$(git log -1 --pretty=%B)
+          git commit -m "$latest_message" --amend --no-edit
+          git push --force
       
