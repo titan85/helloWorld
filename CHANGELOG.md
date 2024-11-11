@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.9.1) (2024-11-11)
+
+
+### Bug Fixes
+
+* permisos script actualizacion de readme ([338b461](https://github.com/titan85/helloWorld/commit/338b461ca3829b86b7e77d253d90325f831954bc))
+
 # [1.9.0](https://github.com/titan85/helloWorld/compare/v1.8.0...v1.9.0) (2024-11-11)
 
 
