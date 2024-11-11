@@ -69,32 +69,33 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Obtener la última versión con BREAKING CHANGES
+        id: obtener_version_breaking_changes
         run: |
+          # Leer la última versión con BREAKING CHANGES del changelog
           version_found=""
-          breaking_found=false
-          
           while IFS= read -r line; do
-              if [[ $line =~ ^#\ \[([0-9]+\.[0-9]+\.[0-9]+)\] ]]; then
-                  if $breaking_found; then
-                      break
-                  fi
-                  version_found="$line"
-              fi
-              
-              if [[ $line =~ ^###\ BREAKING\ CHANGES ]]; then
-                  breaking_found=true
-              fi
+            if [[ "$line" =~ ^#\s\[(.*)\].* ]]; then
+              # Si encontramos una versión, almacenarla temporalmente
+              current_version="${BASH_REMATCH[1]}"
+              current_version_line="$line"
+            elif [[ "$line" =~ ^###\ BREAKING\ CHANGES ]]; then
+              # Si encontramos BREAKING CHANGES, esa es la versión deseada
+              version_found="$current_version"
+              version_line="$current_version_line"
+              break
+            fi
           done < CHANGELOG.md
-          
+
           if [[ -n "$version_found" ]]; then
-              version_tag=$(echo "$version_found" | grep -oP "\d+\.\d+\.\d+")
-              version_date=$(echo "$version_found" | grep -oP "\(\d{4}-\d{2}-\d{2}\)")
-              repo_url="https://github.com/${GITHUB_REPOSITORY}"
-              tag_url="$repo_url/tree/v$version_tag"
-              echo -e "CURRENT_VERSION_SECTION=\"# Current version\n## [$version_tag]($tag_url) $version_date\n\"" >> $GITHUB_ENV
+            repo_url="https://github.com/${GITHUB_REPOSITORY}"
+            tag_url="$repo_url/tree/v$version_found"
+            # Formatear la sección de Current Version para agregar al README.md
+            echo -e "CURRENT_VERSION_SECTION=\"# Current version\n## [$version_found]($tag_url)\n\"" >> $GITHUB_ENV
           else
-              echo "No se encontró una versión con 'BREAKING CHANGES' o versión válida en el changelog."
+            echo "No se encontró ninguna versión con BREAKING CHANGES."
           fi
+        shell: bash
+  
 
       # Paso para actualizar el README.md con la sección actualizada de Current Version
       - name: Update README with Current Version
