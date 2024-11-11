@@ -90,6 +90,12 @@ jobs:
         run: ./scripts/update-readme.sh
         shell: bash
 
+      - name: Borramos ultima etiqueta creada para evitar conflicto en el siguiente paso
+        run: |
+          version=$(git describe --tags --abbrev=0)
+          git tag -d "$version"
+          git push origin :refs/tags/"$version"
+          
       - name: Unificar commits
         run: |
           git config --global user.name "GitHub Actions"
