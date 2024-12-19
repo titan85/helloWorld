@@ -36,15 +36,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Set permissions for deploy.sh
-        run: chmod +x ./scripts/deploy.sh
-
-      - name: Guardar mensaje de commit para su uso al final y mantener historico
-        id: capture_message
-        run: |
-          message=$(git log -1 --pretty=%B)
-          echo "COMMIT_MESSAGE=$message" >> $GITHUB_ENV
-
       - name: Mostrar contexto completo
         uses: actions/github-script@v6
         with:
@@ -57,53 +48,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           repository_url: ${{ github.repository }}
-
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: '3.x'
-
-      - name: Reorder changelog
-        run: python3 scripts/reorder-changelog.py
-
-      - name: Obtener la última versión con BREAKING CHANGES
-        id: obtener_version_breaking_changes
-        run: |
-          # Leer la última versión con BREAKING CHANGES del changelog
-          version_found=""
-          while IFS= read -r line; do
-            if [[ "$line" =~ ^#\s\[(.*)\].* ]]; then
-              # Si encontramos una versión, almacenarla temporalmente
-              current_version="${BASH_REMATCH[1]}"
-              current_version_line="$line"
-            elif [[ "$line" =~ ^###\ BREAKING\ CHANGES ]]; then
-              # Si encontramos BREAKING CHANGES, esa es la versión deseada
-              version_found="$current_version"
-              version_line="$current_version_line"
-              break
-            fi
-          done < CHANGELOG.md
-
-          if [[ -n "$version_found" ]]; then
-            repo_url="https://github.com/${GITHUB_REPOSITORY}"
-            tag_url="$repo_url/tree/v$version_found"
-            # Formatear la sección de Current Version para agregar al README.md
-            echo -e "CURRENT_VERSION_SECTION=\"# Current version\n## [$version_found]($tag_url)\n\"" >> $GITHUB_ENV
-          else
-            echo "No se encontró ninguna versión con BREAKING CHANGES."
-          fi
-        shell: bash
-  
-      - name: Update README with Current Version
-        run: ./scripts/update-readme.sh
-        shell: bash
-          
-      - name: Unificar commits
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add README.md CHANGELOG.md pom.xml
-          git commit --amend --no-edit
-          git push --force
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
