@@ -4,6 +4,14 @@ on:
   push:
     branches:
       - main
+      - develop
+  pull_request:
+    branches:
+      - '**'
+    types:
+      - opened
+      - edited
+      - synchronize
 
 jobs:
   release:
@@ -15,7 +23,7 @@ jobs:
           rm -rf ${{ github.workspace }}/.git
           
       - name: Check out the repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0  
           persist-credentials: true
