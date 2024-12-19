@@ -1,3 +1,34 @@
+# [1.10.0](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.10.0) (2024-12-19)
+
+
+### Bug Fixes
+
+* ajuste de tags ([13ff351](https://github.com/titan85/helloWorld/commit/13ff35163e3538f38e9a8d92233d7a910a8c6034))
+* ajustes ([c9abed7](https://github.com/titan85/helloWorld/commit/c9abed74feb052a7de3956f7fdb68245f25a9762))
+* ajustes ([7be5937](https://github.com/titan85/helloWorld/commit/7be593799bef310de77894475869e48ce39cccd3))
+* ajustes ([a04de32](https://github.com/titan85/helloWorld/commit/a04de324e10e3fb98d997ab718d5b1cafffe8a36))
+* ajustes versionado anterior ([3e5853a](https://github.com/titan85/helloWorld/commit/3e5853a9b0533f6d78afbc89823fcf5285343934))
+* alinear etiquetados ([75cd424](https://github.com/titan85/helloWorld/commit/75cd424d6e2f9cd1429c90a4d1b06c52bfe8f160))
+* cambio ([58e2808](https://github.com/titan85/helloWorld/commit/58e280887d617f83901db8ef511d273b2c25b61c))
+* cambio minimo en un punto ([ed73345](https://github.com/titan85/helloWorld/commit/ed73345b957c989bf926be6cee8164a8c4bcc118))
+* correccion bug ([2f878da](https://github.com/titan85/helloWorld/commit/2f878da4071ee222cbeca9be0e7782d8cf61c294))
+* fixing punto ([ddd613f](https://github.com/titan85/helloWorld/commit/ddd613fb036435f02ad5d45760c2f1a50254a8c1))
+* Merge pull request [#19](https://github.com/titan85/helloWorld/issues/19) from titan85/feature/pruebaSemantic ([7f90e02](https://github.com/titan85/helloWorld/commit/7f90e02e63ba4ff6e927cc383afdbdfa9d6e8cfe))
+* Merge pull request [#20](https://github.com/titan85/helloWorld/issues/20) from titan85/develop ([f5e73e0](https://github.com/titan85/helloWorld/commit/f5e73e01b8fd6725cfdec9c9befff44d1fe6bcb2))
+* Merge pull request [#21](https://github.com/titan85/helloWorld/issues/21) from titan85/feature/pruebaSemantic ([2c672b1](https://github.com/titan85/helloWorld/commit/2c672b183b7b27d423e7fc2effe16267c5bf3760))
+* Merge pull request [#22](https://github.com/titan85/helloWorld/issues/22) from titan85/feature/pruebaSemantic ([a7edc13](https://github.com/titan85/helloWorld/commit/a7edc137718998d4a132772a7c9ceb51f272b09a))
+* Merge pull request [#23](https://github.com/titan85/helloWorld/issues/23) from titan85/develop ([bdceaf8](https://github.com/titan85/helloWorld/commit/bdceaf89a99114581579a3c12e191e4232bf0752))
+* permisos script actualizacion de readme ([338b461](https://github.com/titan85/helloWorld/commit/338b461ca3829b86b7e77d253d90325f831954bc))
+* rename releaserc file ([1f291c4](https://github.com/titan85/helloWorld/commit/1f291c4be91fd62eeaabdd1cedb81d19f1003acf))
+* Update .releaserc.json ([bee3c03](https://github.com/titan85/helloWorld/commit/bee3c035f8aec8e5759a21198890c02e29fee903))
+
+
+### Features
+
+* cambios importantes ([571194a](https://github.com/titan85/helloWorld/commit/571194a70485d55b6a7f09ac1d5179648667d584))
+* reajuste versiones ([977f946](https://github.com/titan85/helloWorld/commit/977f9467c4c8dfdddcb8a6a3e1e0327366a5ce2c))
+* unificar commit con el original ([cb8d7eb](https://github.com/titan85/helloWorld/commit/cb8d7ebe4e76f2094da581090dc597d3402f3b84))
+
 # [1.10.0-snapshot.1](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.10.0-snapshot.1) (2024-12-19)
 
 
