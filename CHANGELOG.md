@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/titan85/helloWorld/compare/v1.10.0...v1.10.1) (2025-01-15)
+
+
+### Bug Fixes
+
+* pruebas ([97e42f9](https://github.com/titan85/helloWorld/commit/97e42f9e92311001b75d105c4294767c559c007b))
+
 # [1.10.0](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.10.0) (2024-12-19)
 
 
