@@ -3,7 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.example</groupId>
     <artifactId>hello-world</artifactId>
+
     <version>1.10.0-snapshot.2</version> <!-- Semantic Release actualizará esta versión. -->
+
     <build>
         <plugins>
             <plugin>
