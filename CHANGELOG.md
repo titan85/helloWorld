@@ -1,7 +1,20 @@
-## [1.10.1](https://github.com/titan85/helloWorld/compare/v1.10.0...v1.10.1) (2025-01-15)
+## [1.10.2-snapshot.1](https://github.com/titan85/helloWorld/compare/v1.10.1...v1.10.2-snapshot.1) (2025-01-15)
 
 
 ### Bug Fixes
+
+* pruebas ([d9a90b2](https://github.com/titan85/helloWorld/commit/d9a90b248430909a1b906f83769ffd448f899123))
+
+# [1.10.0-snapshot.2](https://github.com/titan85/helloWorld/compare/v1.10.0-snapshot.1...v1.10.0-snapshot.2) (2025-01-15)
+
+## [1.10.1](https://github.com/titan85/helloWorld/compare/v1.10.0...v1.10.1) (2025-01-15)
+
+
+
+### Bug Fixes
+
+
+* pruebas ([d9a90b2](https://github.com/titan85/helloWorld/commit/d9a90b248430909a1b906f83769ffd448f899123))
 
 * pruebas ([97e42f9](https://github.com/titan85/helloWorld/commit/97e42f9e92311001b75d105c4294767c559c007b))
 
@@ -35,6 +48,7 @@
 * cambios importantes ([571194a](https://github.com/titan85/helloWorld/commit/571194a70485d55b6a7f09ac1d5179648667d584))
 * reajuste versiones ([977f946](https://github.com/titan85/helloWorld/commit/977f9467c4c8dfdddcb8a6a3e1e0327366a5ce2c))
 * unificar commit con el original ([cb8d7eb](https://github.com/titan85/helloWorld/commit/cb8d7ebe4e76f2094da581090dc597d3402f3b84))
+
 
 # [1.10.0-snapshot.1](https://github.com/titan85/helloWorld/compare/v1.9.0...v1.10.0-snapshot.1) (2024-12-19)
 
