@@ -4,7 +4,7 @@
     <groupId>com.example</groupId>
     <artifactId>hello-world</artifactId>
 
-    <version>1.10.2-snapshot.1</version> <!-- Semantic Release actualizará esta versión. -->
+    <version>1.10.2</version> <!-- Semantic Release actualizará esta versión. -->
 
     <build>
         <plugins>
